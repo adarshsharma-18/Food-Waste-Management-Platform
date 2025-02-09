@@ -1,0 +1,145 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+}
+
+a {
+    color: #2ecc71;
+    text-decoration: none;
+}
+
+/* Navigation */
+nav {
+    background: #111;
+    padding: 1rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2ecc71;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Home Page */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('https://source.unsplash.com/random/1920x1080/?food,charity') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 4rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.action-cards {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.action-card {
+    background: rgba(17, 17, 17, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+    border: 2px solid #2ecc71;
+}
+
+.action-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Forms */
+.form-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('https://source.unsplash.com/random/1920x1080/?community,help') center/cover;
+    padding: 2rem;
+}
+
+.form-wrapper {
+    background: rgba(17, 17, 17, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: #222;
+    border: 1px solid #333;
+    color: white;
+    border-radius: 5px;
+}
+
+button {
+    background: #2ecc71;
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #27ae60;
+}
+
+/* Donate/Collect Pages */
+.donation-list {
+    display: grid;
+    gap: 2rem;
+    padding: 4rem;
+    margin-top: 4rem;
+}
+
+.donation-card {
+    background: #111;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #2ecc71;
+}
