@@ -143,3 +143,39 @@ button:hover {
     border-radius: 10px;
     border: 1px solid #2ecc71;
 }
+
+/* Registration Page Specific */
+.registration-steps {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.step-indicator {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.step-indicator.active {
+    background: #2ecc71;
+}
+
+.step-indicator::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background: #333;
+    right: -40px;
+}
+
+.step-indicator:last-child::after {
+    display: none;
+}
