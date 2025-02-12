@@ -237,3 +237,259 @@
     </script>
 </body>
 </html>
+
+
+// 2nd Home Page 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">FoodBridge</div>
+        <div class="nav-links">
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+    </nav>
+
+    <!-- Rotating Slogan Section -->
+    <div class="slogan-container">
+        <div class="slogan-card">
+            <h1 id="rotating-slogan">Together Against Hunger</h1>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="stat-card">
+            <h2>Bio Fuel Generated</h2>
+            <p class="count" data-target="12540">0</p>
+            <p>Kilograms</p>
+        </div>
+        <div class="stat-card">
+            <h2>People Fed</h2>
+            <p class="count" data-target="89250">0</p>
+            <p>Individuals</p>
+        </div>
+    </div>
+
+    <!-- Action Cards Section -->
+    <div class="action-cards">
+        <a href="donate.html" class="action-card">
+            <h2>Donate Food</h2>
+            <p>Share surplus food with those in need</p>
+        </a>
+        <a href="collect.html" class="action-card">
+            <h2>Collect Food</h2>
+            <p>Find food donations near you</p>
+        </a>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <details class="faq-item">
+                <summary>How does the food donation process work?</summary>
+                <p>Organizations can donate surplus food through our platform, which is then collected by verified NGOs and distributed to those in need.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Is there any cost involved?</summary>
+                <p>Our platform is completely free for both donors and recipients.</p>
+            </details>
+            <details class="faq-item">
+                <summary>How do you ensure food safety?</summary>
+                <p>All donations follow strict food safety guidelines and are monitored through our quality control system.</p>
+            </details>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>📍 123 Green Earth Lane, Sustainability City</p>
+            <p>📞 +1 (555) 123-4567</p>
+            <p>📧 contact@foodbridge.org</p>
+            <div class="social-links">
+                <a href="#">Twitter</a> | 
+                <a href="#">Facebook</a> | 
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div class="company-info">
+            <h3>FoodBridge Initiative</h3>
+            <p>Committed to achieving UN Sustainable Development Goals</p>
+            <p>Registered Non-Profit Organization</p>
+            <p>Est. 2023</p>
+        </div>
+    </div>
+
+    <script>
+        // Rotating Slogans
+        const slogans = [
+            "Waste Less, Feed More",
+            "Fighting Hunger Together",
+            "Sustainable Solutions for Tomorrow",
+            "Connecting Surplus to Need"
+        ];
+        let currentSlogan = 0;
+        
+        function rotateSlogan() {
+            document.getElementById('rotating-slogan').style.opacity = 0;
+            setTimeout(() => {
+                document.getElementById('rotating-slogan').textContent = slogans[currentSlogan];
+                document.getElementById('rotating-slogan').style.opacity = 1;
+                currentSlogan = (currentSlogan + 1) % slogans.length;
+            }, 1000);
+        }
+        setInterval(rotateSlogan, 4000);
+
+        // Animated Counters
+        const counters = document.querySelectorAll('.count');
+        const speed = 200;
+
+        const updateCount = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+                
+                if(count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            });
+        }
+
+        window.addEventListener('load', updateCount);
+    </script>
+</body>
+</html>
+
+<style>
+
+/* New Styles */
+.slogan-container {
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('https://source.unsplash.com/random/1920x1080/?hands,community') center/cover;
+}
+
+.slogan-card {
+    background: rgba(17, 17, 17, 0.9);
+    padding: 2rem 4rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#rotating-slogan {
+    font-size: 2.5rem;
+    transition: opacity 1s ease;
+}
+
+.stats-section {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding: 4rem;
+    background: #111;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+    background: #0a0a0a;
+    border-radius: 10px;
+    width: 300px;
+    border: 2px solid #2ecc71;
+}
+
+.stat-card .count {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2ecc71;
+    margin: 1rem 0;
+}
+
+.faq-section {
+    padding: 4rem;
+    background: #0a0a0a;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.faq-item {
+    background: #111;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.faq-item summary {
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.faq-item p {
+    padding: 1rem;
+    background: #0a0a0a;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 4rem;
+    background: #111;
+    gap: 2rem;
+}
+
+.contact-info, .company-info {
+    padding: 2rem;
+    background: #0a0a0a;
+    border-radius: 10px;
+}
+
+.social-links {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+}
+
+@media (max-width: 768px) {
+    .stats-section, .contact-section {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+    
+    .stat-card {
+        width: 100%;
+    }
+    
+    .slogan-card {
+        padding: 1rem;
+    }
+    
+    #rotating-slogan {
+        font-size: 1.5rem;
+    }
+}

@@ -16,20 +16,120 @@
         </div>
     </nav>
 
-    <div class="hero">
-        <h1>Turn Surplus into Smiles</h1>
-        <p>Join the movement towards Zero Hunger</p>
-        
-        <div class="action-cards">
-            <a href="donate.html" class="action-card">
-                <h2>Donate Food</h2>
-                <p>Share surplus food with those in need</p>
-            </a>
-            <a href="collect.html" class="action-card">
-                <h2>Collect Food</h2>
-                <p>Find food donations near you</p>
-            </a>
+    <!-- Rotating Slogan Section -->
+    <div class="slogan-container">
+        <div class="slogan-card">
+            <h1 id="rotating-slogan">Together Against Hunger</h1>
         </div>
     </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="stat-card">
+            <h2>Bio Fuel Generated</h2>
+            <p class="count" data-target="12540">0</p>
+            <p>Kilograms</p>
+        </div>
+        <div class="stat-card">
+            <h2>People Fed</h2>
+            <p class="count" data-target="89250">0</p>
+            <p>Individuals</p>
+        </div>
+    </div>
+
+    <!-- Action Cards Section -->
+    <div class="action-cards">
+        <a href="donate.html" class="action-card">
+            <h2>Donate Food</h2>
+            <p>Share surplus food with those in need</p>
+        </a>
+        <a href="collect.html" class="action-card">
+            <h2>Collect Food</h2>
+            <p>Find food donations near you</p>
+        </a>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <details class="faq-item">
+                <summary>How does the food donation process work?</summary>
+                <p>Organizations can donate surplus food through our platform, which is then collected by verified NGOs and distributed to those in need.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Is there any cost involved?</summary>
+                <p>Our platform is completely free for both donors and recipients.</p>
+            </details>
+            <details class="faq-item">
+                <summary>How do you ensure food safety?</summary>
+                <p>All donations follow strict food safety guidelines and are monitored through our quality control system.</p>
+            </details>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>📍 123 Green Earth Lane, Sustainability City</p>
+            <p>📞 +1 (555) 123-4567</p>
+            <p>📧 contact@foodbridge.org</p>
+            <div class="social-links">
+                <a href="#">Twitter</a> | 
+                <a href="#">Facebook</a> | 
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div class="company-info">
+            <h3>FoodBridge Initiative</h3>
+            <p>Committed to achieving UN Sustainable Development Goals</p>
+            <p>Registered Non-Profit Organization</p>
+            <p>Est. 2023</p>
+        </div>
+    </div>
+
+    <script>
+        // Rotating Slogans
+        const slogans = [
+            "Waste Less, Feed More",
+            "Fighting Hunger Together",
+            "Sustainable Solutions for Tomorrow",
+            "Connecting Surplus to Need",
+            "Turn Surplus into Smiles"
+        ];
+        let currentSlogan = 0;
+        
+        function rotateSlogan() {
+            document.getElementById('rotating-slogan').style.opacity = 0;
+            setTimeout(() => {
+                document.getElementById('rotating-slogan').textContent = slogans[currentSlogan];
+                document.getElementById('rotating-slogan').style.opacity = 1;
+                currentSlogan = (currentSlogan + 1) % slogans.length;
+            }, 1000);
+        }
+        setInterval(rotateSlogan, 4000);
+
+        // Animated Counters
+        const counters = document.querySelectorAll('.count');
+        const speed = 200;
+
+        const updateCount = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+                
+                if(count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            });
+        }
+
+        window.addEventListener('load', updateCount);
+    </script>
 </body>
 </html>

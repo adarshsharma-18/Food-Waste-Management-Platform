@@ -60,6 +60,7 @@ nav {
 
 .action-cards {
     display: flex;
+    justify-content: center;
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -76,6 +77,130 @@ nav {
 
 .action-card:hover {
     transform: translateY(-10px);
+}
+
+/* New Styles */
+.slogan-container {
+
+    min-height: 80vh;
+    display: flex;
+    margin-top: 4rem;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('https://source.unsplash.com/random/1920x1080/?hands,community') center/cover;
+}
+
+.slogan-card {
+    background: rgba(17, 17, 17, 0.9);
+    padding: 5rem 5rem;
+    border-radius: 15px;
+    text-align: center;
+    justify-content: center;
+}
+
+#rotating-slogan {
+    font-size: 2.5rem;
+    align-items: center;
+    
+    transition: opacity 1s ease;
+}
+
+.stats-section {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding: 4rem;
+    background: #111;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+    background: #0a0a0a;
+    border-radius: 10px;
+    width: 300px;
+    border: 2px solid #2ecc71;
+}
+
+.stat-card .count {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2ecc71;
+    margin: 1rem 0;
+}
+
+.faq-section {
+    padding: 4rem;
+    min-height: 80vh;
+    background: #0a0a0a;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.faq-item {
+    background: #111;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.faq-item summary {
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.faq-item p {
+    padding: 1rem;
+    background: #0a0a0a;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 4rem;
+    background: #111;
+    gap: 2rem;
+}
+
+.contact-info, .company-info {
+    padding: 2rem;
+    background: #0a0a0a;
+    border-radius: 10px;
+}
+
+.social-links {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+}
+
+@media (max-width: 768px) {
+    .stats-section, .contact-section {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+    
+    .stat-card {
+        width: 100%;
+        min-height: fit-content;
+    }
+    
+    .slogan-card {
+        padding: 1rem;
+    }
+    
+    #rotating-slogan {
+        font-size: 1.5rem;
+    }
 }
 
 /* Forms */
