@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodBridge - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,81 +17,96 @@
         </div>
     </nav>
 
-    <!-- Rotating Slogan Section -->
-    <div class="slogan-container">
-        <div class="slogan-card">
-            <h1 id="rotating-slogan">Together Against Hunger</h1>
-        </div>
-    </div>
-
-    <!-- Stats Section -->
-    <div class="stats-section">
-        <div class="stat-card">
-            <h2>Bio Fuel Generated</h2>
-            <p class="count" data-target="12540">0</p>
-            <p>Kilograms</p>
-        </div>
-        <div class="stat-card">
-            <h2>People Fed</h2>
-            <p class="count" data-target="89250">0</p>
-            <p>Individuals</p>
-        </div>
-    </div>
-
-    <!-- Action Cards Section -->
-    <div class="action-cards">
-        <a href="donate.html" class="action-card">
-            <h2>Donate Food</h2>
-            <p>Share surplus food with those in need</p>
-        </a>
-        <a href="collect.html" class="action-card">
-            <h2>Collect Food</h2>
-            <p>Find food donations near you</p>
-        </a>
-    </div>
-
-    <!-- FAQ Section -->
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-container">
-            <details class="faq-item">
-                <summary>How does the food donation process work?</summary>
-                <p>Organizations can donate surplus food through our platform, which is then collected by verified NGOs and distributed to those in need.</p>
-            </details>
-            <details class="faq-item">
-                <summary>Is there any cost involved?</summary>
-                <p>Our platform is completely free for both donors and recipients.</p>
-            </details>
-            <details class="faq-item">
-                <summary>How do you ensure food safety?</summary>
-                <p>All donations follow strict food safety guidelines and are monitored through our quality control system.</p>
-            </details>
-        </div>
-    </div>
-
-    <!-- Contact Section -->
-    <div class="contact-section">
-        <div class="contact-info">
-            <h2>Contact Us</h2>
-            <p>📍 123 Green Earth Lane, Sustainability City</p>
-            <p>📞 +1 (555) 123-4567</p>
-            <p>📧 contact@foodbridge.org</p>
-            <div class="social-links">
-                <a href="#">Twitter</a> | 
-                <a href="#">Facebook</a> | 
-                <a href="#">LinkedIn</a>
+    <!-- Section 1: Rotating Slogan -->
+    <section class="full-screen-section" id="hero">
+        <div class="slogan-container">
+            <div class="slogan-card">
+                <h1 id="rotating-slogan">Together Against Hunger</h1>
             </div>
         </div>
-        <div class="company-info">
-            <h3>FoodBridge Initiative</h3>
-            <p>Committed to achieving UN Sustainable Development Goals</p>
-            <p>Registered Non-Profit Organization</p>
-            <p>Est. 2023</p>
+    </section>
+
+    <!-- Section 2: Statistics -->
+    <section class="full-screen-section stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-leaf"></i>
+                <h2 class="count" data-target="12500">0</h2>
+                <p>Kg of Bio Fuel Generated</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-utensils"></i>
+                <h2 class="count" data-target="84500">0</h2>
+                <p>Meals Provided</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h2 class="count" data-target="320">0</h2>
+                <p>Partner Organizations</p>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Section 3: Donate/Collect -->
+    <section class="full-screen-section action-section">
+        <div class="action-cards">
+            <a href="donate.html" class="action-card">
+                <h2>Donate Food</h2>
+                <p>Share surplus food with those in need</p>
+            </a>
+            <a href="collect.html" class="action-card">
+                <h2>Collect Food</h2>
+                <p>Find food donations near you</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Section 4: FAQ -->
+    
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <details class="faq-item">
+                    <summary>How does the food donation process work?</summary>
+                    <p>Organizations can donate surplus food through our platform, which is then collected by verified NGOs and distributed to those in need.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Is there any cost involved?</summary>
+                    <p>Our platform is completely free for both donors and recipients.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How do you ensure food safety?</summary>
+                    <p>All donations follow strict food safety guidelines and are monitored through our quality control system.</p>
+                </details>
+            </div>
+        </div>
+    
+
+    <!-- Section 5: Contact -->
+    <section class="full-screen-section contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Green Way, Eco City, EC 12345</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> contact@foodbridge.org</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
 
     <script>
-        // Rotating Slogans
+
         const slogans = [
             "Waste Less, Feed More",
             "Fighting Hunger Together",
@@ -110,26 +126,27 @@
         }
         setInterval(rotateSlogan, 4000);
 
-        // Animated Counters
+
+        document.addEventListener('DOMContentLoaded', () => {
         const counters = document.querySelectorAll('.count');
-        const speed = 200;
-
-        const updateCount = () => {
+        
             counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                const inc = target / speed;
-                
-                if(count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(updateCount, 1);
-                } else {
-                    counter.innerText = target.toLocaleString();
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const increment = target / 200;
+                    
+                    if(count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 10);
+                    } else {
+                        counter.innerText = target.toLocaleString();
+                    }
                 }
+                
+                updateCount();
             });
-        }
-
-        window.addEventListener('load', updateCount);
+        });
     </script>
 </body>
 </html>
