@@ -109,13 +109,14 @@ nav {
 .slogan-container {
 
     min-height: 80vh;
+    opacity: 30%;
     display: flex;
     margin-top: 4rem;
     align-items: center;
     justify-content: center;
     min-width: 100%;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                url('https://source.unsplash.com/random/1920x1080/?hands,community') center/cover;
+                url('image/child.png') center/cover;
 }
 
 .slogan-card {
