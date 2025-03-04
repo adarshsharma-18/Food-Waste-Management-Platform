@@ -40,17 +40,6 @@ nav {
     gap: 2rem;
 }
 
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-#username {
-    color: #2ecc71;
-    font-weight: 600;
-}
-
 /* Home Page */
 .hero {
     height: 100vh;
@@ -354,17 +343,3 @@ button:hover {
 .step-indicator:last-child::after {
     display: none;
 }
-.spinner {
-    width: 1.5rem;
-    height: 1.5rem;
-    border: 3px solid #f3f3f3;
-    border-top: 3px solid #2ecc71;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    display: inline-block;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
