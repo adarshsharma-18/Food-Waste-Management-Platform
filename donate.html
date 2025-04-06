@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodBridge - Donate Food</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,45 +13,172 @@
         <div class="logo">FoodBridge</div>
         <div class="nav-links">
             <a href="index.html">Home</a>
+            <a href="#" class="active">Donate</a>
             <a href="profile.html">Profile</a>
+            <a href="index.html" class="login-btn">Logout</a>
         </div>
     </nav>
 
-    <div class="form-container">
+    <div class="page-header">
+        <div class="container">
+            <h1>Food Donation</h1>
+            <p>Share your surplus food with those who need it most</p>
+        </div>
+    </div>
+
+    <div class="form-container donation-form-container">
         <div class="form-wrapper">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Food Donation Form</h2>
+            <div class="form-header">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h2>Food Donation Form</h2>
+                <p>Please provide details about the food you're donating</p>
+            </div>
+            
             <form>
                 <div class="form-group">
-                    <label>Food Type</label>
-                    <input type="text" required>
+                    <label for="food-type">Food Type</label>
+                    <input type="text" id="food-type" placeholder="e.g., Cooked meals, Fresh produce" required>
                 </div>
-                <div class="form-group">
-                    <label>Quantity (kg)</label>
-                    <input type="number" required>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="quantity">Quantity (kg)</label>
+                        <input type="number" id="quantity" min="0.1" step="0.1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="servings">Approximate Servings</label>
+                        <input type="number" id="servings" min="1">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Preparation Date & Time</label>
-                    <input type="datetime-local" required>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prep-date">Preparation Date & Time</label>
+                        <input type="datetime-local" id="prep-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiry-date">Expiry Time</label>
+                        <input type="datetime-local" id="expiry-date" required>
+                    </div>
                 </div>
+                
                 <div class="form-group">
-                    <label>Expiry Time</label>
-                    <input type="datetime-local" required>
-                </div>
-                <div class="form-group">
-                    <label>Storage Condition</label>
-                    <select>
+                    <label for="storage">Storage Condition</label>
+                    <select id="storage">
                         <option>Refrigerated</option>
                         <option>Room Temperature</option>
                         <option>Frozen</option>
+                        <option>Hot/Warm</option>
                     </select>
                 </div>
+                
                 <div class="form-group">
-                    <label>Pickup Location</label>
-                    <input type="text" required>
+                    <label for="dietary">Dietary Information</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="vegetarian">
+                            <label for="vegetarian">Vegetarian</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="vegan">
+                            <label for="vegan">Vegan</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="gluten-free">
+                            <label for="gluten-free">Gluten Free</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="nuts-free">
+                            <label for="nuts-free">Nuts Free</label>
+                        </div>
+                    </div>
                 </div>
+                
+                <div class="form-group">
+                    <label for="pickup-location">Pickup Location</label>
+                    <input type="text" id="pickup-location" required>
+                    <div class="location-map">
+                        <button type="button" class="map-btn"><i class="fas fa-map-marker-alt"></i> Use Current Location</button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">Additional Notes</label>
+                    <textarea id="notes" rows="3" placeholder="Any special instructions or details about the food"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="photos">Upload Photos (Optional)</label>
+                    <input type="file" id="photos" accept="image/*" multiple>
+                </div>
+                
                 <button type="submit">Submit Donation</button>
             </form>
+            
+            <div class="form-footer">
+                <p><i class="fas fa-info-circle"></i> Your donation will be visible to verified recipient organizations in your area.</p>
+            </div>
         </div>
     </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo">FoodBridge</div>
+                <p>Bridging the gap between surplus and need</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="donate.html">Donate Food</a>
+                    <a href="collect.html">Collect Food</a>
+                    <a href="#">Volunteer</a>
+                    <a href="#">Partnership</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 FoodBridge. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Get current date and time for preparation date
+        const now = new Date();
+        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+        document.getElementById('prep-date').value = now.toISOString().slice(0, 16);
+        
+        // Set default expiry time to 24 hours later
+        const tomorrow = new Date(now);
+        tomorrow.setHours(tomorrow.getHours() + 24);
+        document.getElementById('expiry-date').value = tomorrow.toISOString().slice(0, 16);
+        
+        // Current location button
+        document.querySelector('.map-btn').addEventListener('click', function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    // This would typically integrate with a mapping API like Google Maps
+                    // For now, we'll just display the coordinates
+                    const locationField = document.getElementById('pickup-location');
+                    locationField.value = `Lat: ${position.coords.latitude.toFixed(6)}, Long: ${position.coords.longitude.toFixed(6)}`;
+                });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        });
+    </script>
 </body>
 </html>
