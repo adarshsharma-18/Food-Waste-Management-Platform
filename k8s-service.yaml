@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: food-waste-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: food-waste-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

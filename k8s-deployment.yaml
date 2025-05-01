@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: food-waste-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: food-waste-app
+  template:
+    metadata:
+      labels:
+        app: food-waste-app
+    spec:
+      containers:
+      - name: food-waste-container
+        image: adarshsharma18/food-waste-app:latest
+        ports:
+        - containerPort: 80
